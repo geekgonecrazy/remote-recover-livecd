@@ -1,0 +1,5 @@
+setup.sh
+**/*.squashfs
+**/*.iso
+repack.sh
+newfilesystem.*

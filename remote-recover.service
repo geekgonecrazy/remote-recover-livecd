@@ -1,0 +1,12 @@
+[Unit]
+After=network.target
+
+[Service]
+Environment="REMOTE_RESCUE_SERVER=recova.your-domain.com"
+Environment="REMOTE_RESCUE_SERVER_USER=remote"
+Environment="REMOTE_RESCUE_SERVER_KEY_PATH=/root/.ssh/baked-in-key"
+Environment="REMOTE_RESCUE_SERVER_BIND_PORT=43002"
+ExecStart=/usr/local/bin/remote-recover
+
+[Install]
+WantedBy=default.target

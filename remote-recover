@@ -1,0 +1,20 @@
+#!/bin/bash 
+
+RemoteUser="${REMOTE_RESCUE_SERVER_USER:-remote}"
+RemoteBindPort="${REMOTE_RESCUE_SERVER_BIND_PORT:-43002}"
+RemoteKeyPath="${REMOTE_RESCUE_SERVER_KEY_PATH:-/root/.ssh/baked-in-key}"
+
+while :
+do
+	echo "Trying to expose shell on remote server"
+
+	if [[ -z "${REMOTE_RESCUE_SERVER}" ]]; then
+		echo "Please make sure REMOTE_RESCUE_SERVER environment variable is defined pointing to the remote rescue server"
+		exit 1
+	else
+  		RemoteServer="${REMOTE_RESCUE_SERVER}"
+	fi
+	
+	ssh -i $RemoteKeyPath -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -R $RemoteBindPort:localhost:22 -N $RemoteUser@$RemoteServer
+	sleep 1
+done

@@ -1,0 +1,6 @@
+iso
+**/*.iso
+newfilesystem.*
+filesystem.squashfs
+baked-in-key
+baked-in-key.pub
