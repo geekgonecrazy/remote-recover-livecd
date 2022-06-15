@@ -32,7 +32,7 @@ Now that its loaded in to docker as `ubuntulive:base` we can use the Dockerfile 
 
 Once you have added any further changes you want:
 ```
-docker build -t ubuntulive:image .
+docker build -t ubuntulive:image --build-arg version=0.3 .
 ```
 
 ### Configure
