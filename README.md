@@ -2,7 +2,7 @@
 
 This is provided as-is.  Basically to document for my self in case I ever need to do it again.  It solved a need for me to be able to gain access to a remote machine over 450 miles (~720km) and reset the admin password for a family member that didn't have any other way to get into their machine.
 
-Big thanks to @slai 's blog post: https://slai.github.io/posts/customising-ubuntu-live-isos-with-docker/ was what you can tell was the building blocks to make this happen via docker which I thought was an interesting way to script the adjustments to the squashfs in a familiar way.
+Big thanks to [@slai](https://github.com/slai)'s blog post: https://slai.github.io/posts/customising-ubuntu-live-isos-with-docker/ was what you can tell was the building blocks to make this happen via docker which I thought was an interesting way to script the adjustments to the squashfs in a familiar way.
 
 Some disclaimers:
 1. Only tested creation on ubuntu
