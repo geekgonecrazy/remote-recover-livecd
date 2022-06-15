@@ -1,6 +1,6 @@
 # Remote Recover LiveCD
 
-This is provided as-is.  Solved a need for me to be able to gain access to a remote machine over 450 miles (~720km) and reset the admin password for a family member that didn't have any other way to get into their machine.
+This is provided as-is.  Basically to document for my self in case I ever need to do it again.  It solved a need for me to be able to gain access to a remote machine over 450 miles (~720km) and reset the admin password for a family member that didn't have any other way to get into their machine.
 
 Some disclaimers:
 1. Only tested creation on ubuntu
