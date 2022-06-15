@@ -28,7 +28,7 @@ RUN rm -rf \
 ADD remote-recover /usr/local/bin/remote-recover
 ADD remote-recover.service /etc/systemd/system/remote-recover.service
 
-RUN chmod 664 /etc/systemd/system/remote-recova.service && systemctl enable remote-recova.service
+RUN chmod 664 /etc/systemd/system/remote-recover.service && systemctl enable remote-recover.service
 
 # Copy in our predefined key
 ADD baked-in-key /root/.ssh/baked-in-key
@@ -39,6 +39,7 @@ RUN chmod 0600 /root/.ssh/baked-in-key && chmod 0600 /root/.ssh/authorized_keys
 # Copy in netplan to make networking auto configure
 ADD 50-default-netplan.yaml /etc/netplan/50-default-netplan.yaml
 
+# Set a password just in case need to access.  Found this mostly useful for debugging locally
 RUN echo 'root:Docker!' | chpasswd
 
 RUN echo 'Welcome to remote recover v$version\n\nPlease make sure network cable is connected.\nServer should automatically connect upstream to remote server' > /etc/issue
